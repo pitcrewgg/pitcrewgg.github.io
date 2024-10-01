@@ -7,8 +7,10 @@
         color: #2a7fff;
         }
       body {
-        background-color: #333;
-        background-image: linear-gradient(#1a1a1a, #333);
+        /* INFO: Carbon fibre pattern by Atle Mo (design) and Sebastien Grosjean (code): https://projects.verou.me/css3patterns/#carbon */
+        background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+        background-color: #131313;
+        background-size: 20px 20px;
         color: #f2f2f2;
         display: flex;
         flex-direction: column;
@@ -17,19 +19,17 @@
         margin: 0px;
         text-align: center;
         }
-      body, footer, header {
-        background-position: center center;
-      }
       footer {
-        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-      }
+        background-image: linear-gradient(rgba(19, 19, 19, 0), rgba(19, 19, 19, 1));
+        }
       footer, header, main {
         padding: 0em 1em;
         }
       header {
-        background-image: url("pitcrew-logo.svg");
+        background-image: url("pitcrew-logo.svg"), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        background-position: center center;
         background-repeat: no-repeat;
-        background-size: 30em;
+        background-size: 30em, auto;
         height: 100vh;
         overflow: hidden; /* FIX: Hide header text */
         text-indent: 100vw; /* FIX: Hide header text */
