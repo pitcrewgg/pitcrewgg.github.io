@@ -2,54 +2,104 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>PitCrew</title>
+    <title>Linux flight and racing simulation community - PitCrew</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <style>
       a {
         color: #2a7fff;
-        }
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
       body {
         /* INFO: Carbon fibre pattern by Atle Mo (design) and Sebastien Grosjean (code): https://projects.verou.me/css3patterns/#carbon */
         background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
         background-color: #131313;
         background-size: 20px 20px;
         color: #f2f2f2;
-        display: flex;
-        flex-direction: column;
+        cursor: default;
         font-family: sans-serif;
         font-size: 1em;
         margin: 0px;
         text-align: center;
-        }
-      footer {
-        background-image: linear-gradient(rgba(19, 19, 19, 0), rgba(19, 19, 19, 1));
-        }
+      }
       footer, header, main {
         padding: 0em 1em;
-        }
+      }
       header {
-        background-image: url("pitcrew-logo.svg"), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        display: none;
+      }
+      main {
+        align-items: center;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 30em, auto;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
         height: 100vh;
-        overflow: hidden; /* FIX: Hide header text */
-        text-indent: 100vw; /* FIX: Hide header text */
-        }
+        justify-content: center;
+      }
+      .hashtag {
+        margin-top: -2.5em;
+      }
+      .hashtag, .social {
+        padding-left: 0em;  /* FIX: Layout offset/indent */
+      }
+      .hashtag-item {
+        font-size: 1.15em;
+        font-style: italic;
+        opacity: 0.2;
+      }
+      .hashtag-item, .logo {
+        padding: 0.75em;
+      }
+      .hashtag-item, .social-item {
+        display: inline-block;
+      }
       .legalese {
         font-size: 0.8em;
-        opacity:0.5;
-        }
+        opacity: 0.5;
+      }
+      .logo {
+        width: 30em;
+      }
+      .social {
+        margin-top: -0.1em;
+      }
+      .social-item {
+        padding: 0.75em;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+        width: 1.75em;
+      }
+      .social-item:hover {
+        transform: scale(125%);
+      }
     </style>
   </head>
   <body>
     <header>
       <h1>PitCrew</h1>
+      <p>The Linux community for flight and racing simulation enthusiasts</p>
     </header>
     <main>
+      <img class="logo" src="pitcrew-logo.svg" alt="The PitCrew logo" />
+      <ul class="hashtag">
+        <li class="hashtag-item">#Linux</li>
+        <li class="hashtag-item">#FlightSim</li>
+        <li class="hashtag-item">#SimRacing</li>
+      </ul>
+      <ul class="social">
+        <li class="social-item"><a href="https://discord.pitcrew.gg" target="pitcrew" title="Open Discord"><img src="discord.svg" alt="The Discord icon" /></a></li>
+        <li class="social-item"><a href="https://x.com/pitcrewgg" target="pitcrew" title="Open X"><img src="x.svg" alt="The X icon" /></a></li>
+        <li class="social-item"><a href="https://mastodon.social/@pitcrewgg" target="pitcrew" title="Open Mastodon"><img src="mastodon.svg" alt="The Mastodon icon" /></a></li>
+        <li class="social-item"><a href="https://bsky.app/profile/pitcrewgg.bsky.social" target="pitcrew" title="Open Bluesky"><img src="bluesky.svg" alt="The Bluesky icon" /></a></li>
+      </ul>
     </main>
     <footer>
-      <p class="legalese">&copy; <a href="https://pitcrew.gg">pitcrew.gg</a>. All rights reserved.</p>
+      <p class="legalese">&copy; <a href="https://pitcrew.gg" title="Open website">pitcrew.gg</a>. All rights reserved.</p>
     </footer>
   </body>
 </html>
