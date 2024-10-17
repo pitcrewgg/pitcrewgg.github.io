@@ -5,6 +5,26 @@
     <title>Linux flight and racing simulation community - PitCrew</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <style>
+      @keyframes roll {
+        0% {
+          background-position: 35% 50%;
+        mask-position: 60% 50%;
+            -webkit-mask-position: 60% 50%;
+        }
+        100% {
+          background-position: 65% 50%;
+        mask-position: 40% 50%;
+            -webkit-mask-position: 40% 50%;
+        }
+      }
+      @media (orientation: portrait) {
+        .logo {
+          width: 80% !important;
+        }
+        .social-item {
+          width: 3.5em !important;
+        }
+      }
       a {
         color: #2a7fff;
         text-decoration: none;
@@ -40,35 +60,52 @@
         flex-direction: column;
         height: 100vh;
         justify-content: center;
+        overflow: hidden;
+        position: relative;
       }
-      .hashtag {
-        margin-top: -2.5em;
-      }
-      .hashtag, .social {
-        padding-left: 0em;  /* FIX: Layout offset/indent */
-      }
-      .hashtag-item {
-        font-size: 1.15em;
-        font-style: italic;
-        opacity: 0.2;
-      }
-      .hashtag-item, .logo {
-        padding: 0.75em;
-      }
-      .hashtag-item, .social-item {
-        display: inline-block;
+      main::after {
+        animation-direction: alternate;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+        animation-name: roll;
+        animation-timing-function: ease-in-out;
+        background-image: url("hashtag.svg");
+        background-position: 35% 50%;
+        background-size: 50%;
+        content: '';
+        height: 100%;
+        left: 0px;
+      mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+          -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+      mask-position: 60% 50%;
+            -webkit-mask-position: 60% 50%;
+      mask-repeat: no-repeat;
+          -webkit-mask-repeat: no-repeat;
+      mask-size: 80% 80%;
+          -webkit-mask-size: 80% 80%;
+        position: absolute;
+        top: 0px;
+        transform: rotate(45deg);
+        width: 100%;
+        z-index: -1;
       }
       .legalese {
         font-size: 0.8em;
         opacity: 0.5;
       }
       .logo {
+        padding: 0.75em;
         width: 30em;
       }
+      .logo, .social-item {
+        filter: drop-shadow(0em 0em 0.5em rgba(0, 0, 0, 0.8));
+      }
       .social {
-        margin-top: -0.1em;
+        margin-top: -2em;
+        padding-left: 0em;  /* FIX: Layout offset/indent */
       }
       .social-item {
+        display: inline-block;
         padding: 0.75em;
         transition-duration: 150ms;
         transition-timing-function: ease-in-out;
@@ -86,11 +123,6 @@
     </header>
     <main>
       <img class="logo" src="pitcrew-logo.svg" alt="The PitCrew logo" />
-      <ul class="hashtag">
-        <li class="hashtag-item">#Linux</li>
-        <li class="hashtag-item">#FlightSim</li>
-        <li class="hashtag-item">#SimRacing</li>
-      </ul>
       <ul class="social">
         <li class="social-item"><a href="https://discord.pitcrew.gg" target="pitcrew" title="Open Discord"><img src="discord.svg" alt="The Discord icon" /></a></li>
         <li class="social-item"><a href="https://x.com/pitcrewgg" target="pitcrew" title="Open X"><img src="x.svg" alt="The X icon" /></a></li>
