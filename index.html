@@ -7,26 +7,29 @@
     <style>
       @keyframes roll {
         0% {
-          background-position: 35% 50%;
-        mask-position: 60% 50%;
-            -webkit-mask-position: 60% 50%;
+          background-position: left;
         }
         100% {
-          background-position: 65% 50%;
-        mask-position: 40% 50%;
-            -webkit-mask-position: 40% 50%;
+          background-position: right;
         }
       }
-      @media (orientation: portrait) {
+      @media (orientation: landscape) {
+        main::after {
+          animation-duration: 4s !important;
+          background-size: 90% !important;
+        }
+        .legalese {
+          font-size: 0.5em !important;
+        }
         .logo {
-          width: 80% !important;
+           width: 15em !important;
+        }
+        .social {
+          margin-top: -2em !important;
         }
         .social-item {
-          padding: 1.75em !important;
-          width: 5em !important;
-        }
-        main::after {
-          background-size: 70% !important;
+          padding: 0.25em !important;
+          width: 1.25em !important;
         }
       }
       a {
@@ -44,9 +47,12 @@
         color: #f2f2f2;
         cursor: default;
         font-family: sans-serif;
-        font-size: 1em;
+        font-size: 2em;
         margin: 0px;
         text-align: center;
+      }
+      footer {
+        filter: drop-shadow(0em 0em 0.1em rgba(0, 0, 0, 0.8));
       }
       footer, header, main {
         padding: 0em 1em;
@@ -56,7 +62,7 @@
       }
       main {
         align-items: center;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
         background-position: center center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -69,24 +75,23 @@
       }
       main::after {
         animation-direction: alternate;
-        animation-duration: 5s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
         animation-name: roll;
         animation-timing-function: ease-in-out;
         background-image: url("hashtag.svg");
-        background-position: 35% 50%;
-        background-size: 50%;
-        content: '';
+        background-position: left;
+        background-size: 160%;
+        content: "";
+        direction: right;
         height: 100%;
         left: 0px;
       mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
           -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
-      mask-position: 60% 50%;
-            -webkit-mask-position: 60% 50%;
+      mask-position: center;
+          -webkit-mask-position: center;
       mask-repeat: no-repeat;
           -webkit-mask-repeat: no-repeat;
-      mask-size: 80% 80%;
-          -webkit-mask-size: 80% 80%;
         position: absolute;
         top: 0px;
         transform: rotate(45deg);
@@ -94,18 +99,17 @@
         z-index: -1;
       }
       .legalese {
-        font-size: 0.8em;
         opacity: 0.5;
       }
       .logo {
         padding: 0.75em;
-        width: 30em;
+        width: 80%;
       }
       .logo, .social-item {
-        filter: drop-shadow(0em 0em 0.5em rgba(0, 0, 0, 0.8));
+        filter: drop-shadow(0em 0em 0.5em rgba(0, 0, 0, 0.5));
       }
       .social {
-        margin-top: -2em;
+        margin-top: -2.5em;
         padding-left: 0em;  /* FIX: Layout offset/indent */
       }
       .social-item {
@@ -113,7 +117,7 @@
         padding: 0.75em;
         transition-duration: 150ms;
         transition-timing-function: ease-in-out;
-        width: 1.75em;
+        width: 2.25em;
       }
       .social-item:hover {
         transform: scale(125%);
@@ -135,7 +139,7 @@
       </ul>
     </main>
     <footer>
-      <p class="legalese">&copy; <a href="https://pitcrew.gg" title="Open website">pitcrew.gg</a>. All rights reserved.</p>
+      <p class="legalese">&copy; 2024 <a href="https://pitcrew.gg" title="Open website">pitcrew.gg</a>.</p>
     </footer>
   </body>
 </html>
