@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Linux flight and racing simulation community - PitCrew</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <style>
+      @keyframes roll-desktop {
+        0% {
+          background-position: left;
+        }
+        100% {
+          background-position: right;
+        }
+      }
+      @keyframes roll-mobile {
+        0% {
+          background-position: right;
+        }
+        100% {
+          background-position: left;
+        }
+      }
+      @media (orientation: landscape) {
+        main::after {
+          animation-duration: 4s !important;
+          animation-name: roll-desktop !important;
+          background-size: 90% !important;
+        }
+        .legalese {
+          font-size: 0.5em !important;
+        }
+        .logo {
+           width: 15em !important;
+        }
+        .social {
+          margin-top: -2em !important;
+        }
+        .social-item {
+          padding: 0.25em !important;
+          width: 1.25em !important;
+        }
+      }
+      /* FIX: Improve tablet layout */
+      @media (min-device-height: 1024px) and (orientation: portrait) {
+        .legalese {
+          font-size: 0.5em !important;
+        }
+        .social-item {
+          padding: 0.5em !important;
+          width: 1.5em !important;
+        }
+      }
+      a {
+        color: #2a7fff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      body {
+        /* INFO: Carbon fibre pattern by Atle Mo (design) and Sebastien Grosjean (code): https://projects.verou.me/css3patterns/#carbon */
+        background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+        background-color: #131313;
+        background-size: 20px 20px;
+        color: #f2f2f2;
+        cursor: default;
+        font-family: sans-serif;
+        font-size: 2em;
+        margin: 0px;
+        text-align: center;
+      }
+      footer {
+        filter: drop-shadow(0em 0em 0.1em rgba(0, 0, 0, 0.8));
+      }
+      footer, header, main {
+        padding: 0em 1em;
+      }
+      header {
+        display: none;
+      }
+      main {
+        align-items: center;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      main::after {
+        animation-direction: alternate;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-name: roll-mobile;
+        animation-timing-function: ease-in-out;
+        background-image: url("hashtag.svg");
+        background-position: left;
+        background-size: 160%;
+        content: "";
+        direction: right;
+        height: 100%;
+        left: 0px;
+      mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+          -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+      mask-position: center;
+          -webkit-mask-position: center;
+      mask-repeat: no-repeat;
+          -webkit-mask-repeat: no-repeat;
+        position: absolute;
+        top: 0px;
+        transform: rotate(45deg);
+        width: 100%;
+        z-index: -1;
+      }
+      .legalese {
+        opacity: 0.5;
+      }
+      .logo {
+        padding: 0.75em;
+        width: 80%;
+      }
+      .logo, .social-item {
+        filter: drop-shadow(0em 0em 0.5em rgba(0, 0, 0, 0.5));
+      }
+      .social {
+        margin-top: -2.5em;
+        padding-left: 0em;  /* FIX: Layout offset/indent */
+      }
+      .social-item {
+        display: inline-block;
+        padding: 0.75em;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+        width: 2.25em;
+      }
+      .social-item:hover {
+        transform: scale(125%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PitCrew</h1>
+      <p>The Linux community for flight and racing simulation enthusiasts</p>
+    </header>
+    <main>
+      <img class="logo" src="pitcrew-logo.svg" alt="The PitCrew logo" />
+      <ul class="social">
+        <li class="social-item"><a href="https://discord.pitcrew.gg" target="pitcrew" title="Open Discord"><img src="discord.svg" alt="The Discord icon" /></a></li>
+        <li class="social-item"><a href="https://x.com/pitcrewgg" target="pitcrew" title="Open X"><img src="x.svg" alt="The X icon" /></a></li>
+        <li class="social-item"><a href="https://mastodon.social/@pitcrewgg" target="pitcrew" title="Open Mastodon"><img src="mastodon.svg" alt="The Mastodon icon" /></a></li>
+        <li class="social-item"><a href="https://bsky.app/profile/pitcrewgg.bsky.social" target="pitcrew" title="Open Bluesky"><img src="bluesky.svg" alt="The Bluesky icon" /></a></li>
+      </ul>
+    </main>
+    <footer>
+      <p class="legalese">&copy; 2024 <a href="https://pitcrew.gg" title="Open website">pitcrew.gg</a>.</p>
+    </footer>
+  </body>
+</html>
